@@ -16,7 +16,7 @@ then
 
 ```npm install```
 
-this will install the depandancies. Once this is done you will need to add your own MongoDB url to your database to the .env file. You can either create a .env by simple making a text document and adding the varibles and values like so:
+this will install the depandancies. Once this is done you will need to add your own MongoDB url to your database to the .env file. You can either create a .env by simple making a text document and adding the varibles and values in the api folder like so:
 
 ```MONGODB="string"```
 
