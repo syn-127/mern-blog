@@ -16,7 +16,15 @@ then
 
 ```npm install```
 
-this will install the depandancies. Once done then you need to type
+this will install the depandancies. Once this is done you will need to add your own MongoDB url to your database to the .env file. You can either create a .env by simple making a text document and adding the varibles and values like so:
+
+```MONGODB="string"```
+
+You will also need to add one for bycrpt but this can be any random characters and can be anything you like. This is used to generate the salt hash it can be any character length but I suggest the longer the better:
+
+```BYCRYPT_SECRET='ABC123456789'```
+
+Once you have done this you are ready to run the server , to do this run the following on the terminal:
 
 ```node index.js```
 
