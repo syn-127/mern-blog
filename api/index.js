@@ -10,6 +10,7 @@ const cookieParser = require('cookie-parser');
 const multer = require('multer');
 const uploadMiddleware = multer({dest: 'uploads/'});
 const fs = require('fs');
+require('dotenv').config();
 
 const salt = bcrypt.genSaltSync(10);
 const secret = 'asdsuahd8272hjndmsdus8';
@@ -19,7 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static('uploads'));
 
-mongoose.connect('mongodb+srv://Winterseye:Lagomatic00@winterseye1.s9phteu.mongodb.net/?retryWrites=true&w=majority');
+mongoose.connect(process.env.MONGODB);
 
 app.get('/test', (req, res) => {
     res.json('test ok');
@@ -133,7 +134,5 @@ app.get('/post/:id', async (req, res) => {
     const postDoc = await Post.findById(id).populate('author', ['username']);
     res.json(postDoc);
 })
-
-// mongodb+srv://Winterseye:Lagomatic00@winterseye1.s9phteu.mongodb.net/?retryWrites=true&w=majority
 
 app.listen(4000);
